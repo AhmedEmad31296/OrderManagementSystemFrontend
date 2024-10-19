@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ product ? 'Edit product' : 'Create product' }}</h4>
+</div>
+<div class="modal-body">
+    <form #productForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" [(ngModel)]="product.name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" class="form-control" [(ngModel)]="product.price" name="price" required
+                min="0">
+        </div>
+        <div class="form-group">
+            <label for="stockQuantity">Stock Quantity</label>
+            <input type="number" id="stockQuantity" class="form-control" [(ngModel)]="product.stockQuantity"
+                name="stockQuantity" required min="0">
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!productForm.form.valid">Save</button>
+</div>

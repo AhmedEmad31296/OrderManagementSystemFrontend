@@ -1,0 +1,35 @@
+<!-- src/app/customer/customer.component.html -->
+<div class="container">
+    <h2>Customers List</h2>
+    <button class="btn btn-primary mb-3" (click)="openCreateModal()">Create Customer</button>
+    <table id="customersTable" datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date Of Birth</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>{{ customer.fullName }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.phoneNumber }}</td>
+                <td>{{ customer.dateOfBirth | date: 'MM/dd/yyyy' }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm m-2" (click)="openEditModal(customer.customerId)">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteCustomer(customer.customerId)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="totalRecords > 0">
+        <p>Total Records: {{ totalRecords }}</p>
+    </div>
+</div>

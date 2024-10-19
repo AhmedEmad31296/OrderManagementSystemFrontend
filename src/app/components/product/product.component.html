@@ -1,0 +1,33 @@
+<!-- src/app/products/products.component.html -->
+<div class="container">
+    <h2>Products List</h2>
+    <button class="btn btn-primary mb-3" (click)="openCreateModal()">Create Product</button>
+    <table id="productsTable" datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.name}}</td>
+                <td>{{ product.price | currency }}</td>
+                <td>{{ product.stockQuantity }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm m-2" (click)="openEditModal(product.productId)">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.productId)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="totalRecords > 0">
+        <p>Total Records: {{ totalRecords }}</p>
+    </div>
+</div>

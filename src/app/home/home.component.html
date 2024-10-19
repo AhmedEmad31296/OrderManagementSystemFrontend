@@ -1,0 +1,35 @@
+<div class="filters-container">
+    <input type="number" placeholder="Min Price" [(ngModel)]="lowPrice" />
+    <input type="number" placeholder="Max Price" [(ngModel)]="highPrice" />
+    <input type="text" placeholder="Search by name" [(ngModel)]="searchTerm" />
+    <button class="apply-filters-btn" (click)="applyFilters()">Apply Filters</button>
+</div>
+
+<div class="product-cards-container">
+    <div class="card" *ngFor="let product of products">
+        <div class="card-img-container">
+            <img src="https://asset.inc42.com/2023/08/Glossary-Series-D2C-ftr-social-F5.jpg" alt="Product Image"
+                class="card-img" />
+            <span class="card-badge">
+                New
+                <picture>
+                    <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a5/512.webp" type="image/webp" />
+                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a5/512.gif" alt="💥" width="32"
+                        height="32" />
+                </picture>
+            </span>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">{{ product.name }}</h2>
+            <p class="card-description">
+                Only {{ product.stockQuantity }} In Stock.
+            </p>
+            <div class="card-info">
+                <span class="card-price">${{ product.price }}</span>
+                <button class="card-btn" id="buyBtn" (click)="openEditModal(product.productId)">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

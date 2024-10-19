@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ customer ? 'Edit Customer' : 'Create Customer' }}</h4>
+</div>
+<div class="modal-body">
+    <form #customerForm="ngForm">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" class="form-control" [(ngModel)]="customer.fullName" name="fullName"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="customer.email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="customer.phoneNumber"
+                name="phoneNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <div class="input-group">
+                <input type="date" id="dateOfBirth" class="form-control" [(ngModel)]="customer.dateOfBirth"
+                    name="dateOfBirth" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">{{ customer.dateOfBirth | date }}</span>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!customerForm.form.valid">Save</button>
+</div>

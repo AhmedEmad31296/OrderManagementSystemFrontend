@@ -1,0 +1,44 @@
+.order-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.table-sm th,
+.table-sm td {
+    padding: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}

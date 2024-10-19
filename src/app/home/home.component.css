@@ -1,0 +1,107 @@
+.filters-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.apply-filters-btn {
+    background-color: #1976d2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.apply-filters-btn:hover {
+    background-color: white;
+    color: #598fc6;
+    border: 2px solid #1976d2;
+}
+
+.filters-container input {
+    padding: 10px;
+    margin-right: 55px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filters-container input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+.product-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 215px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-container {
+    position: relative;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-badge {
+    position: absolute;
+    left: 0px;
+    background-color: red;
+    color: white;
+    padding: 1px;
+    border-radius: 5px;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin: 0 0 10px;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    margin: 0 0 10px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-btn:hover {
+    background-color: #78b9fb;
+}

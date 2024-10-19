@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{product.name}}</h4>
+</div>
+<div class="modal-body">
+    <form #orderForm="ngForm">
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" id="price" class="form-control" [value]="product.price" readonly disabled>
+        </div>
+        <div class="form-group p-2">
+            <label for="quantity">Quantity</label>
+            <div class="input-group">
+                <input type="number" id="quantity" class="form-control" [(ngModel)]="quantity" min="1"
+                    [max]="product.stockQuantity" name="quantity" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">Only {{ product.stockQuantity }} In Stock.</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group p-2">
+            <label for="name">Customer Name</label>
+            <input type="text" id="name" class="form-control" [(ngModel)]="customer.CustomerName" name="name" required>
+        </div>
+        <div class="form-group p-2">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="customer.Email" name="email" required>
+        </div>
+        <div class="form-group p-2">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="customer.PhoneNumber"
+                name="phoneNumber" required>
+        </div>
+        <div class="form-group p-2">
+            <label for="dateOfBirth">Date of Birth</label>
+            <div class="input-group">
+                <input type="date" id="dateOfBirth" class="form-control" [(ngModel)]="customer.DateOfBirth"
+                    name="dateOfBirth" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">{{ customer.DateOfBirth | date }}</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="save(product.productId)"
+        [disabled]="isLoading||!orderForm.form.valid">Save</button>
+</div>
